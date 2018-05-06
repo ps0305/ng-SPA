@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-pagethree',
   templateUrl: './pagethree.component.html',
@@ -9,8 +9,8 @@ export class PagethreeComponent implements OnInit {
 
   private var_three:string;
 
-  constructor() { 
-    this.var_three = "I am from page three component !"
+  constructor(private _route:ActivatedRoute) { 
+    this.var_three = this._route.snapshot.params['e_id']+"..."+this._route.snapshot.params['e_name']+"..."+this._route.snapshot.params['e_sal'];
   }
 
   ngOnInit() {

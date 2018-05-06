@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pageone',
@@ -8,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class PageoneComponent implements OnInit {
   private var_one:string;
 
-  constructor() { 
-    this.var_one="I am from the page one component !"
+  constructor(private _route:ActivatedRoute) { 
+    this.var_one = this._route.snapshot.params['e_id']+"..."+this._route.snapshot.params['e_name']+"...."+this._route.snapshot.params['e_sal'];
   }
 
   ngOnInit() {
