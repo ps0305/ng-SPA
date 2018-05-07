@@ -13,6 +13,6 @@ export class IndexComponent implements OnInit {
   ngOnInit() {
   }
 public clickMe(){
-  this._router.navigate(["/page_three"]);
+  this._router.navigate(["/page_three",333,'e_three',30000]);
 }
 }
